@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { CONTACT_EMAIL } from "@/lib/content";
-import { ArrowUp } from "./Icons";
+import { ArrowUp } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -132,11 +132,11 @@ export default function Footer() {
                 <div className="mt-10 sm:mt-12 pt-5 border-t border-[#A8C7B3]/20 flex flex-col-reverse sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
                     <span className="text-xs sm:text-sm text-[#A8C7B3]">© 2026 NusaGizi · Nexus Kesehatan Indonesia</span>
                     <a
-                        className="w-10 h-10 rounded-full bg-[#00A735] hover:bg-[#10B947] flex items-center justify-center transition-all hover:-translate-y-0.5 shrink-0 text-[#04210D]"
+                        className="w-10 h-10 rounded-full bg-[#00A735] hover:bg-[#10B947] flex items-center justify-center transition-all hover:-translate-y-0.5 shrink-0 text-white shadow-md cursor-pointer"
                         href="#top"
                         aria-label="Kembali ke atas"
                     >
-                        <ArrowUp />
+                        <ArrowUp size={20} strokeWidth={2.5} />
                     </a>
                 </div>
             </div>

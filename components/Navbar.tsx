@@ -71,7 +71,7 @@ export default function Navbar() {
             onClick={() => setIsOpen(false)}
         >
             <div
-                className="w-full bg-white border-b border-[#E3EAE4] shadow-2xl p-5 flex flex-col gap-4 overflow-y-auto animate-slideDown"
+                className="w-full bg-white border-b border-[#E3EAE4] shadow-2xl p-5 pb-10 flex flex-col gap-4 overflow-y-auto animate-slideDown"
                 onClick={(e) => e.stopPropagation()}
             >
                 <nav className="flex flex-col gap-1.5">
@@ -86,11 +86,6 @@ export default function Navbar() {
                         </a>
                     ))}
                 </nav>
-                <div className="pt-3 border-t border-[#E3EAE4]">
-                    <a className="btn btn-primary w-full justify-center py-3.5 text-base" href="#daftar" onClick={() => setIsOpen(false)}>
-                        Coba Gratis
-                    </a>
-                </div>
             </div>
         </div>
     );
