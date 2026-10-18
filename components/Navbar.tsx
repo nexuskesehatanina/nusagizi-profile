@@ -20,6 +20,36 @@ export default function Navbar() {
         }
     }, []);
 
+    // Kunci scroll halaman belakang ketika menu mobile dibuka
+    // Harus mengunci html DAN body, serta gunakan position:fixed untuk iOS Safari
+    useEffect(() => {
+        if (!isOpen) return;
+
+        const scrollY = window.scrollY;
+        const html = document.documentElement;
+
+        // Kunci html dan body
+        html.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+        // iOS Safari: position fixed agar bounce scroll tidak lolos
+        document.body.style.position = "fixed";
+        document.body.style.top = `-${scrollY}px`;
+        document.body.style.left = "0";
+        document.body.style.right = "0";
+
+        return () => {
+            // Kembalikan semua style
+            html.style.overflow = "";
+            document.body.style.overflow = "";
+            document.body.style.position = "";
+            document.body.style.top = "";
+            document.body.style.left = "";
+            document.body.style.right = "";
+            // Kembalikan posisi scroll ke posisi semula
+            window.scrollTo({ top: scrollY, behavior: "instant" });
+        };
+    }, [isOpen]);
+
     // Tutup menu otomatis jika layar diperbesar ke ukuran desktop
     useEffect(() => {
         const handleResize = () => {
