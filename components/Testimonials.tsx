@@ -22,12 +22,11 @@ export default function Testimonials() {
             align: "start",
             loop: true,
             dragFree: true,
-            watchDrag: false, // Kursor di atas card/carousel tidak akan menghentikan atau mengganggu scroll sama sekali
+            watchDrag: false,
         },
         [autoScroll.current],
     );
 
-    // Gandakan item agar continuous infinite scroll selalu padat dan seamless
     const displayTestimonials = [...testimonials, ...testimonials];
 
     return (
