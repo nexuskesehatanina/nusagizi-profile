@@ -36,12 +36,12 @@ export default function Testimonials() {
             </div>
 
             {/* Carousel Viewport dengan Auto Infinite Smooth Scroll tak terputus */}
-            <div ref={emblaRef} className="overflow-hidden select-none">
-                <div className="flex gap-5">
+            <div ref={emblaRef} className="overflow-hidden select-none py-2">
+                <div className="flex -ml-6 sm:-ml-7 lg:-ml-8">
                     {displayTestimonials.map((t, idx) => (
                         <div
                             key={`${t.name}-${idx}`}
-                            className="flex-[0_0_88%] sm:flex-[0_0_calc(50%-0.65rem)] lg:flex-[0_0_calc(33.333%-0.85rem)] min-w-0 flex"
+                            className="flex-[0_0_88%] sm:flex-[0_0_50%] lg:flex-[0_0_33.333333%] min-w-0 pl-6 sm:pl-7 lg:pl-8 flex"
                         >
                             <article className="w-full bg-white border-[1.5px] border-dashed border-[#CFDBD2] rounded-[20px] p-6 flex flex-col justify-between text-left">
                                 <div>
