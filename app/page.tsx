@@ -12,24 +12,24 @@ import Waitlist from "@/components/Waitlist";
 import Footer from "@/components/Footer";
 
 export default function Home() {
-  return (
-    <div className="page" id="top">
-      <div className="sheet">
-        <Navbar />
-        <main>
-          <Hero />
-          <ReferenceStrip />
-          <Features />
-          <Band />
-          <HowItWorks />
-          <Screenshots />
-          <Testimonials />
-          <Pricing />
-          <Faq />
-          <Waitlist />
-        </main>
-        <Footer />
-      </div>
-    </div>
-  );
+    return (
+        <div className="page" id="top">
+            <div className="sheet">
+                <Navbar />
+                <main>
+                    <Hero />
+                    <ReferenceStrip />
+                    <Features />
+                    <Band />
+                    <HowItWorks />
+                    {/* <Screenshots /> */}
+                    <Testimonials />
+                    <Pricing />
+                    <Faq />
+                    <Waitlist />
+                </main>
+                <Footer />
+            </div>
+        </div>
+    );
 }
