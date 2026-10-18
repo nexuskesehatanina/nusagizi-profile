@@ -14,10 +14,6 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <div className="page" id="top">
-      <span className="orb g1" aria-hidden="true" />
-      <span className="orb g2" aria-hidden="true" />
-      <span className="orb g3" aria-hidden="true" />
-
       <div className="sheet">
         <Navbar />
         <main>

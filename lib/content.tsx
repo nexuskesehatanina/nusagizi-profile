@@ -1,5 +1,6 @@
 import {
     BookText,
+    Camera,
     ChartNoAxesCombined,
     FileCheckCorner,
     NotebookPen,
@@ -48,7 +49,7 @@ export const features: { title: string; desc: string; icon: ReactNode }[] = [
     {
         title: "Personalized Recipe Recommendations",
         desc: "Dapatkan rekomendasi resep sesuai kebutuhan gizi dan usia anak untuk membantu menyajikan makanan yang lebih bervariasi.",
-        icon: <UserPen />,
+        icon: <Utensils />,
     },
     {
         title: "Smart Grocery Checklist",
@@ -58,7 +59,7 @@ export const features: { title: string; desc: string; icon: ReactNode }[] = [
     {
         title: "Food Photo Journal",
         desc: "Catat makanan yang dikonsumsi si kecil melalui jurnal foto untuk membantu orang tua meninjau kebiasaan makan dari waktu ke waktu.",
-        icon: <Utensils />,
+        icon: <Camera />,
     },
     {
         title: "Consultation Notes",
@@ -117,7 +118,25 @@ export const testimonials = [
         slot: "Perspektif Ibu",
         quote: "Berguna banget, apalagi untuk MPASI yang krusial, banyak pantangan dan alerginya jadi harus dipantau strict. Belum ada aplikasi lain yang sedetail ini.",
         name: "Dina Hamid",
-        role: "Ibu Bekerja",
+        role: "Ibu Bekerja & Pengguna Aktif",
+    },
+    {
+        slot: "Perspektif Nutrisionis",
+        quote: "Panduan kebutuhan kalori dan makronutrisi harian di NusaGizi sangat praktis. Membantu orang tua menyusun menu seimbang tanpa harus bingung menghitung manual.",
+        name: "Rizka Maulida, S.Gz",
+        role: "Ahli Gizi Klinis",
+    },
+    {
+        slot: "Perspektif Orang Tua",
+        quote: "Fitur checklist belanja dan ide resepnya penyelamat banget di akhir pekan. Persiapan makanan untuk anak jadi jauh lebih teratur dan hemat waktu.",
+        name: "Budi Pratama",
+        role: "Ayah 2 Anak",
+    },
+    {
+        slot: "Perspektif Kader Komunitas",
+        quote: "Kurva pertumbuhannya mudah dibaca oleh ibu-ibu saat kegiatan posyandu. Edukasi pencegahan stunting di lingkungan warga jadi lebih mudah disampaikan.",
+        name: "Siti Rahmawati",
+        role: "Kader Posyandu Melati",
     },
 ];
 

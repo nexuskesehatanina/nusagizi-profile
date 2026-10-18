@@ -4,232 +4,138 @@ import { ArrowUp } from "./Icons";
 
 export default function Footer() {
     return (
-        <footer className="foot">
-            <div className="fg">
-                <div className="about">
-                    <a className="brand" href="#top" style={{ display: "inline-flex", alignItems: "center", gap: "0.6rem" }}>
-                        <Image src="/logo.png" alt="Logo NusaGizi" width={28} height={28} style={{ objectFit: "contain" }} />
-                        <span style={{ fontSize: "1.15rem", fontWeight: 800, letterSpacing: "-0.02em" }}>NusaGizi</span>
-                    </a>
-                    <p style={{ marginTop: "0.85rem", lineHeight: 1.6, opacity: 0.85 }}>
-                        Menerjemahkan data pertumbuhan anak menjadi tindakan nyata yang dapat dilakukan orang tua setiap hari.
-                    </p>
-                </div>
+        <footer className="bg-[#072B19] text-[#A8C7B3] pt-12 sm:pt-14 pb-8 relative">
+            <div className="w-full max-w-360 mx-auto px-4 sm:px-6 lg:px-8">
+                {/* Grid Responsif via Tailwind: 1 kolom di HP, 2 kolom di tablet, 4 kolom di desktop */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.3fr_0.85fr_0.85fr_1.3fr] gap-8 lg:gap-6">
+                    <div>
+                        <a className="inline-flex items-center gap-2.5" href="#top">
+                            <Image
+                                src="/logo.png"
+                                alt="Logo NusaGizi"
+                                width={140}
+                                height={35}
+                                priority
+                                className="w-auto h-8 sm:h-9 object-contain"
+                            />
+                        </a>
+                        <p className="mt-3.5 text-sm text-[#A8C7B3] leading-relaxed max-w-[34ch] opacity-85">Dari Data Menjadi Tindakan Nyata.</p>
+                    </div>
 
-                <div>
-                    <h4>Produk</h4>
-                    <ul>
-                        <li>
-                            <a href="#fitur">Fitur</a>
-                        </li>
-                        <li>
-                            <a href="#cara-kerja">Cara kerja</a>
-                        </li>
-                        <li>
-                            <a href="#harga">Harga</a>
-                        </li>
-                        <li>
-                            <a href="#faq">FAQ</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4>Untuk Faskes</h4>
-                    <ul>
-                        <li>
-                            <a href="#harga">Dashboard Pemantauan</a>
-                        </li>
-                        <li>
-                            <a href="#daftar">Ajukan Kerja Sama</a>
-                        </li>
-                        <li>
-                            <a href="#daftar">Program CSR</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4>Kontak & Media Sosial</h4>
-                    <ul style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
-                        <li>
-                            <a
-                                href={`mailto:${CONTACT_EMAIL}`}
-                                style={{
-                                    display: "inline-flex",
-                                    alignItems: "center",
-                                    gap: "0.65rem",
-                                    color: "#EAF6EE",
-                                    textDecoration: "none",
-                                    transition: "color 0.2s ease",
-                                }}
-                            >
-                                <span
-                                    style={{
-                                        width: "28px",
-                                        height: "28px",
-                                        borderRadius: "8px",
-                                        background: "rgba(255, 255, 255, 0.08)",
-                                        border: "1px solid rgba(255, 255, 255, 0.14)",
-                                        display: "inline-grid",
-                                        placeItems: "center",
-                                        flexShrink: 0,
-                                    }}
-                                >
-                                    <Image src="/mail.svg" alt="Email" width={14} height={14} style={{ filter: "brightness(0) invert(1)" }} />
-                                </span>
-                                <span style={{ whiteSpace: "nowrap", fontSize: "0.82rem" }}>{CONTACT_EMAIL}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://wa.me/6287791152573"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{
-                                    display: "inline-flex",
-                                    alignItems: "center",
-                                    gap: "0.65rem",
-                                    color: "#EAF6EE",
-                                    textDecoration: "none",
-                                    transition: "color 0.2s ease",
-                                }}
-                            >
-                                <span
-                                    style={{
-                                        width: "28px",
-                                        height: "28px",
-                                        borderRadius: "8px",
-                                        background: "rgba(255, 255, 255, 0.08)",
-                                        border: "1px solid rgba(255, 255, 255, 0.14)",
-                                        display: "inline-grid",
-                                        placeItems: "center",
-                                        flexShrink: 0,
-                                    }}
-                                >
-                                    <Image
-                                        src="/whatsapp-black.svg"
-                                        alt="WhatsApp"
-                                        width={14}
-                                        height={14}
-                                        style={{ filter: "brightness(0) invert(1)" }}
-                                    />
-                                </span>
-                                <span>0877-9115-2573</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="https://instagram.com/Nusagizi.id"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{
-                                    display: "inline-flex",
-                                    alignItems: "center",
-                                    gap: "0.65rem",
-                                    color: "#EAF6EE",
-                                    textDecoration: "none",
-                                    transition: "color 0.2s ease",
-                                }}
-                            >
-                                <span
-                                    style={{
-                                        width: "28px",
-                                        height: "28px",
-                                        borderRadius: "8px",
-                                        background: "rgba(255, 255, 255, 0.08)",
-                                        border: "1px solid rgba(255, 255, 255, 0.14)",
-                                        display: "inline-grid",
-                                        placeItems: "center",
-                                        flexShrink: 0,
-                                    }}
-                                >
-                                    <Image
-                                        src="/instagram.svg"
-                                        alt="Instagram"
-                                        width={14}
-                                        height={14}
-                                        style={{ filter: "brightness(0) invert(1)" }}
-                                    />
-                                </span>
-                                <span>Nusagizi.id</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style={{ marginTop: "2.4rem", paddingTop: "1.6rem", borderTop: "1px solid rgba(168,199,179,0.14)" }}>
-                {/* Disclaimer Card yang Rapi dan Bersih */}
-                <div
-                    style={{
-                        background: "rgba(255, 255, 255, 0.04)",
-                        border: "1px solid rgba(255, 255, 255, 0.08)",
-                        borderRadius: "12px",
-                        padding: "0.85rem 1.1rem",
-                        fontSize: "0.78rem",
-                        lineHeight: 1.6,
-                        color: "#C2DED0",
-                        display: "flex",
-                        alignItems: "flex-start",
-                        gap: "0.75rem",
-                    }}
-                >
-                    <div style={{ display: "flex", flexDirection: "column", gap: "0.35rem" }}>
-                        <div style={{ color: "#fff", fontWeight: 700, fontSize: "0.8rem", letterSpacing: "0.02em" }}>
-                            Catatan Medis & Ketentuan Data
-                        </div>
-                        <ul
-                            style={{
-                                listStyle: "none",
-                                padding: 0,
-                                margin: 0,
-                                display: "flex",
-                                flexDirection: "column",
-                                gap: "0.25rem",
-                                color: "#B8D9C7",
-                                fontSize: "0.77rem",
-                                lineHeight: 1.5,
-                            }}
-                        >
-                            <li style={{ display: "flex", alignItems: "baseline", gap: "0.45rem" }}>
-                                <span style={{ color: "#00E676", fontSize: "0.9rem", lineHeight: 1 }}>•</span>
-                                <span>
-                                    NusaGizi adalah alat bantu pemantauan gizi dan{" "}
-                                    <strong style={{ color: "#EAF6EE", fontWeight: 600 }}>tidak menggantikan pemeriksaan/penilaian klinis</strong>{" "}
-                                    tenaga kesehatan.
-                                </span>
+                    <div>
+                        <h4 className="text-xs font-extrabold tracking-widest uppercase text-white mb-3">Navigasi</h4>
+                        <ul className="list-none p-0 m-0 flex flex-col gap-2 text-sm">
+                            <li>
+                                <a className="hover:text-white transition-colors" href="#top">
+                                    Beranda
+                                </a>
                             </li>
-                            <li style={{ display: "flex", alignItems: "baseline", gap: "0.45rem" }}>
-                                <span style={{ color: "#00E676", fontSize: "0.9rem", lineHeight: 1 }}>•</span>
-                                <span>
-                                    Status gizi mengacu pada <strong style={{ color: "#EAF6EE", fontWeight: 600 }}>standar antropometri WHO</strong>.
-                                </span>
+                            <li>
+                                <a className="hover:text-white transition-colors" href="#fitur">
+                                    Fitur
+                                </a>
                             </li>
-                            <li style={{ display: "flex", alignItems: "baseline", gap: "0.45rem" }}>
-                                <span style={{ color: "#00E676", fontSize: "0.9rem", lineHeight: 1 }}>•</span>
-                                <span>
-                                    Data contoh pada halaman ini{" "}
-                                    <strong style={{ color: "#EAF6EE", fontWeight: 600 }}>bukan data pasien nyata</strong>.
-                                </span>
+                            <li>
+                                <a className="hover:text-white transition-colors" href="#cara-kerja">
+                                    Cara Kerja
+                                </a>
+                            </li>
+                            <li>
+                                <a className="hover:text-white transition-colors" href="#tampilan-aplikasi">
+                                    Tampilan Aplikasi
+                                </a>
+                            </li>
+                            <li>
+                                <a className="hover:text-white transition-colors" href="#harga">
+                                    Paket Harga
+                                </a>
+                            </li>
+                            <li>
+                                <a className="hover:text-white transition-colors" href="#faq">
+                                    FAQ
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="text-xs font-extrabold tracking-widest uppercase text-white mb-3">Informasi</h4>
+                        <ul className="list-none p-0 m-0 flex flex-col gap-2 text-sm">
+                            <li>
+                                <a className="hover:text-white transition-colors" href="#top">
+                                    Tentang NusaGizi
+                                </a>
+                            </li>
+                            <li>
+                                <a className="hover:text-white transition-colors" href="#faq">
+                                    Kebijakan Privasi
+                                </a>
+                            </li>
+                            <li>
+                                <a className="hover:text-white transition-colors" href="#faq">
+                                    Syarat dan Ketentuan
+                                </a>
+                            </li>
+                            <li>
+                                <a className="hover:text-white transition-colors" href="#daftar">
+                                    Hubungi Kami
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 className="text-xs font-extrabold tracking-widest uppercase text-white mb-3">Kontak & Media Sosial</h4>
+                        <ul className="list-none p-0 m-0 flex flex-col gap-3">
+                            <li>
+                                <a
+                                    href={`mailto:${CONTACT_EMAIL}`}
+                                    className="inline-flex items-center gap-2.5 text-[#EAF6EE] hover:text-white transition-colors"
+                                >
+                                    <span className="w-7 h-7 rounded-lg bg-white/10 border border-white/15 inline-grid place-items-center shrink-0">
+                                        <Image src="/mail.svg" alt="Email" width={14} height={14} className="brightness-0 invert" />
+                                    </span>
+                                    <span className="text-xs sm:text-sm break-all">{CONTACT_EMAIL}</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://wa.me/6287791152573"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2.5 text-[#EAF6EE] hover:text-white transition-colors"
+                                >
+                                    <span className="w-7 h-7 rounded-lg bg-white/10 border border-white/15 inline-grid place-items-center shrink-0">
+                                        <Image src="/whatsapp-black.svg" alt="WhatsApp" width={14} height={14} className="brightness-0 invert" />
+                                    </span>
+                                    <span className="text-xs sm:text-sm">0877-9115-2573</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://instagram.com/Nusagizi.id"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="inline-flex items-center gap-2.5 text-[#EAF6EE] hover:text-white transition-colors"
+                                >
+                                    <span className="w-7 h-7 rounded-lg bg-white/10 border border-white/15 inline-grid place-items-center shrink-0">
+                                        <Image src="/instagram.svg" alt="Instagram" width={14} height={14} className="brightness-0 invert" />
+                                    </span>
+                                    <span className="text-xs sm:text-sm">nusagizi.id</span>
+                                </a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <div
-                    className="fb"
-                    style={{
-                        marginTop: "1.4rem",
-                        borderTop: "none",
-                        paddingTop: 0,
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                    }}
-                >
-                    <span style={{ fontSize: "0.8rem", color: "#A8C7B3" }}>© 2026 NusaGizi · Nexus Kesehatan Indonesia</span>
-                    <a className="up-btn" href="#top" aria-label="Kembali ke atas" style={{ position: "static" }}>
+                {/* Bottom Bar via Tailwind: Vertikal di HP sempit, horizontal di tablet/desktop */}
+                <div className="mt-10 sm:mt-12 pt-5 border-t border-[#A8C7B3]/20 flex flex-col-reverse sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+                    <span className="text-xs sm:text-sm text-[#A8C7B3]">© 2026 NusaGizi · Nexus Kesehatan Indonesia</span>
+                    <a
+                        className="w-10 h-10 rounded-full bg-[#00A735] hover:bg-[#10B947] flex items-center justify-center transition-all hover:-translate-y-0.5 shrink-0 text-[#04210D]"
+                        href="#top"
+                        aria-label="Kembali ke atas"
+                    >
                         <ArrowUp />
                     </a>
                 </div>

@@ -2,98 +2,85 @@
 
 import * as React from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import AutoScroll from "embla-carousel-auto-scroll";
 import Image from "next/image";
 import { testimonials } from "@/lib/content";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Testimonials() {
-    const [emblaRef, emblaApi] = useEmblaCarousel({
-        align: "start",
-        loop: true,
-    });
+    const autoScroll = React.useRef(
+        AutoScroll({
+            speed: 1.2,
+            stopOnInteraction: false,
+            stopOnMouseEnter: false,
+            stopOnFocusIn: false,
+            playOnInit: true,
+        }),
+    );
 
-    const scrollPrev = React.useCallback(() => {
-        if (emblaApi) emblaApi.scrollPrev();
-    }, [emblaApi]);
+    const [emblaRef] = useEmblaCarousel(
+        {
+            align: "start",
+            loop: true,
+            dragFree: true,
+            watchDrag: false, // Kursor di atas card/carousel tidak akan menghentikan atau mengganggu scroll sama sekali
+        },
+        [autoScroll.current],
+    );
 
-    const scrollNext = React.useCallback(() => {
-        if (emblaApi) emblaApi.scrollNext();
-    }, [emblaApi]);
+    // Gandakan item agar continuous infinite scroll selalu padat dan seamless
+    const displayTestimonials = [...testimonials, ...testimonials];
 
     return (
-        <section id="testimoni" className="in block">
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
-                <h2 className="sec-title" style={{ margin: 0 }}>
-                    Apa Kata Mereka Tentang NusaGizi?
-                </h2>
-                <div style={{ display: "flex", gap: "0.5rem" }}>
-                    <button
-                        onClick={scrollPrev}
-                        aria-label="Previous"
-                        style={{
-                            width: "40px",
-                            height: "40px",
-                            borderRadius: "50%",
-                            border: "1px solid var(--line)",
-                            background: "#fff",
-                            display: "grid",
-                            placeItems: "center",
-                            cursor: "pointer",
-                        }}
-                    >
-                        <ChevronLeft size={18} />
-                    </button>
-                    <button
-                        onClick={scrollNext}
-                        aria-label="Next"
-                        style={{
-                            width: "40px",
-                            height: "40px",
-                            borderRadius: "50%",
-                            border: "1px solid var(--line)",
-                            background: "#fff",
-                            display: "grid",
-                            placeItems: "center",
-                            cursor: "pointer",
-                        }}
-                    >
-                        <ChevronRight size={18} />
-                    </button>
-                </div>
+        <section id="testimoni" className="w-full max-w-360 mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+            <div className="text-center mb-8 sm:mb-12">
+                <h2 className="sec-title text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0F1F16]">Apa Kata Mereka Tentang NusaGizi?</h2>
             </div>
 
-            {/* Carousel Viewport */}
-            <div ref={emblaRef} style={{ overflow: "hidden" }}>
-                <div style={{ display: "flex", gap: "1rem", touchAction: "pan-y" }}>
-                    {testimonials.map((t) => (
+            {/* Carousel Viewport dengan Auto Infinite Smooth Scroll tak terputus */}
+            <div ref={emblaRef} className="overflow-hidden select-none">
+                <div className="flex gap-5">
+                    {displayTestimonials.map((t, idx) => (
                         <div
-                            key={t.name}
-                            style={{
-                                flex: "0 0 calc(33.333% - 0.67rem)",
-                                minWidth: 0,
-                                display: "flex",
-                            }}
-                            className="carousel-slide"
+                            key={`${t.name}-${idx}`}
+                            className="flex-[0_0_88%] sm:flex-[0_0_calc(50%-0.65rem)] lg:flex-[0_0_calc(33.333%-0.85rem)] min-w-0 flex"
                         >
-                            <article className="tcard" style={{ height: "100%", width: "100%", display: "flex", flexDirection: "column" }}>
-                                <div className="qm">&ldquo;</div>
-                                <span className="tslot">{t.slot}</span>
-                                <blockquote style={{ flex: 1, margin: 0 }}>{t.quote}</blockquote>
-                                <div className="who" style={{ height: "64px", minHeight: "64px", maxHeight: "64px", flexShrink: 0, marginTop: "auto" }}>
-                                    <Image
-                                        src="/women_profile.jpg"
-                                        alt={t.name}
-                                        width={36}
-                                        height={36}
-                                        style={{
-                                            borderRadius: "50%",
-                                            objectFit: "cover",
-                                            flexShrink: 0,
-                                        }}
-                                    />
-                                    <div>
-                                        <b>{t.name}</b>
-                                        <small>{t.role}</small>
+                            <article className="w-full bg-white border-[1.5px] border-dashed border-[#CFDBD2] rounded-[20px] p-6 flex flex-col justify-between text-left">
+                                <div>
+                                    {/* Quote Icon Hijau */}
+                                    <div className="mb-3.5">
+                                        <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M0 11.43C0 5.11 4.34 0.77 10.66 0v4.57C7.2 4.57 5.37 6.4 5.14 9.14h5.52V20H0v-8.57zm13.34 0C13.34 5.11 17.69 0.77 24 0v4.57c-3.46 0-5.29 1.83-5.51 4.57H24V20H13.34v-8.57z"
+                                                fill="#159549"
+                                            />
+                                        </svg>
+                                    </div>
+
+                                    {/* Pill Badge Perspektif */}
+                                    <span className="inline-block self-start text-[11px] font-bold tracking-wider uppercase text-[#4E6155] bg-[#EDF3EF] px-3 py-1 rounded-full mb-4">
+                                        {t.slot}
+                                    </span>
+
+                                    {/* Teks Kutipan */}
+                                    <blockquote className="m-0 text-[#4B5563] text-[15px] sm:text-[15.5px] leading-[1.65] font-normal text-left">
+                                        {t.quote}
+                                    </blockquote>
+                                </div>
+
+                                {/* Divider & Info Profil */}
+                                <div className="mt-6 pt-4 border-t border-[#EEF3F0] flex items-center gap-3.5 text-left">
+                                    <div className="w-10.5 h-10.5 shrink-0 flex items-center justify-center">
+                                        <Image
+                                            src="/women_profile.jpg"
+                                            alt={t.name}
+                                            width={42}
+                                            height={42}
+                                            className="w-10.5 h-10.5 object-contain"
+                                        />
+                                    </div>
+                                    <div className="flex flex-col text-left min-w-0">
+                                        <b className="text-[#0F1F16] font-bold text-[14px] sm:text-[14.5px] leading-tight truncate">{t.name}</b>
+                                        <small className="text-[#6B7280] text-[12px] sm:text-[12.5px] leading-tight mt-1">{t.role}</small>
                                     </div>
                                 </div>
                             </article>

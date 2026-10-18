@@ -4,72 +4,33 @@ import Image from "next/image";
 
 export default function Waitlist() {
     const PLAYSTORE_URL = "https://play.google.com/store";
-    const WHATSAPP_URL =
-        "https://wa.me/6281234567890?text=Halo%20NusaGizi,%20saya%20tertarik%20untuk%20mengetahui%20lebih%20lanjut%20tentang%20aplikasi%20ini.";
+    const WHATSAPP_URL = "https://wa.me/6287791152573";
 
     return (
-        <section id="daftar" className="in cta">
-            <div className="cta-panel">
-                <div>
-                    <h2>Berat anak naik tipis bulan ini? Jangan tunggu kontrol berikutnya.</h2>
-                    <p className="sub">
-                        Unduh aplikasi NusaGizi sekarang untuk mulai mendampingi tumbuh kembang si kecil, atau hubungi tim kami via WhatsApp jika
-                        membutuhkan bantuan.
+        <section id="daftar" className="w-full max-w-360 mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16">
+            <div className="relative overflow-hidden rounded-2xl text-white bg-linear-to-br from-[#072B19] to-[#0B6A33] p-6 sm:p-10 lg:p-12 grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-8 items-center text-center lg:text-left shadow-lg">
+                <div className="relative z-10 flex flex-col items-center lg:items-start">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
+                        Dampingi Tumbuh Kembang Si Kecil, Mulai Hari ini.
+                    </h2>
+                    <p className="text-[#C9E8D4] text-sm sm:text-base max-w-[46ch] mt-3 sm:mt-4 leading-relaxed">
+                        Pantau tumbuh kembang, temukan inspirasi menu, dan kelola kebutuhan gizi si kecil dalam satu aplikasi. Mulai perjalananmu
+                        bersama NusaGizi secara gratis.
                     </p>
                 </div>
 
-                <div
-                    style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        gap: "0.9rem",
-                        justifyContent: "center",
-                    }}
-                >
+                <div className="relative z-10 flex flex-col gap-3.5 justify-center w-full max-w-sm mx-auto lg:mx-0">
                     {/* Tombol Play Store */}
                     <a
                         href={PLAYSTORE_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="btn btn-white"
-                        style={{
-                            display: "inline-flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            gap: "0.75rem",
-                            padding: "0.95rem 1.4rem",
-                            textDecoration: "none",
-                            borderRadius: "14px",
-                            boxShadow: "0 10px 24px -10px rgba(0,0,0,0.3)",
-                            transition: "transform .2s ease, box-shadow .2s ease",
-                        }}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.transform = "translateY(-2px)";
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.transform = "translateY(0)";
-                        }}
+                        className="btn btn-white w-full flex items-center justify-center gap-3 p-3.5 sm:p-4 rounded-2xl shadow-md hover:-translate-y-0.5 transition-all"
                     >
-                        <Image
-                            src="/google-play-5.svg"
-                            alt="Google Play Logo"
-                            width={26}
-                            height={26}
-                            style={{ flexShrink: 0, objectFit: "contain" }}
-                        />
-                        <div style={{ textAlign: "left", lineHeight: 1.2 }}>
-                            <div
-                                style={{
-                                    fontSize: "0.68rem",
-                                    textTransform: "uppercase",
-                                    letterSpacing: "0.08em",
-                                    opacity: 0.8,
-                                    color: "var(--muted)",
-                                }}
-                            >
-                                Temukan di
-                            </div>
-                            <div style={{ fontSize: "1.05rem", fontWeight: 800, color: "var(--ink)" }}>Google Play</div>
+                        <Image src="/google-play-5.svg" alt="Google Play Logo" width={26} height={26} className="shrink-0 object-contain" />
+                        <div className="text-left leading-tight">
+                            <div className="text-[0.68rem] uppercase tracking-wider text-[#58695F]">Temukan di</div>
+                            <div className="text-base sm:text-lg font-extrabold text-[#0F1F16]">Google Play</div>
                         </div>
                     </a>
 
@@ -78,32 +39,9 @@ export default function Waitlist() {
                         href={WHATSAPP_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        style={{
-                            display: "inline-flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            gap: "0.5rem",
-                            padding: "0.95rem 1.4rem",
-                            borderRadius: "14px",
-                            background: "rgba(255, 255, 255, 0.12)",
-                            border: "1px solid rgba(255, 255, 255, 0.28)",
-                            color: "#fff",
-                            textDecoration: "none",
-                            fontSize: "0.96rem",
-                            fontWeight: 700,
-                            boxShadow: "0 4px 14px rgba(0,0,0,0.1)",
-                            transition: "all .2s ease",
-                        }}
-                        onMouseEnter={(e) => {
-                            e.currentTarget.style.background = "rgba(255, 255, 255, 0.2)";
-                            e.currentTarget.style.transform = "translateY(-2px)";
-                        }}
-                        onMouseLeave={(e) => {
-                            e.currentTarget.style.background = "rgba(255, 255, 255, 0.12)";
-                            e.currentTarget.style.transform = "translateY(0)";
-                        }}
+                        className="w-full flex items-center justify-center gap-2.5 p-3.5 sm:p-4 rounded-2xl bg-white/12 border border-white/25 text-white text-sm sm:text-base font-bold shadow-sm hover:bg-white/20 hover:-translate-y-0.5 transition-all"
                     >
-                        <Image src="/whatsapp-3.svg" alt="WhatsApp Logo" width={28} height={28} style={{ flexShrink: 0, objectFit: "contain" }} />
+                        <Image src="/whatsapp-3.svg" alt="WhatsApp Logo" width={26} height={26} className="shrink-0 object-contain" />
                         <span>Hubungi via WhatsApp</span>
                     </a>
                 </div>
