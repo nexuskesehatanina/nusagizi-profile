@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 export default function Waitlist() {
-    const PLAYSTORE_URL = "https://play.google.com/store";
+    const PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.nexuskesehatanina.nusagizi&pcampaignid=web_share";
     const WHATSAPP_URL = "https://wa.me/6287791152573";
 
     return (
